@@ -5,7 +5,7 @@ int VectorHori::output(const string FileName){
 	for (auto i = v.begin(); i != v.end(); ++i) {
 		fout << *i << ' ';
 	}
-	fout << '\n';
+	fout << '\n' << '\n';
 	fout.close();
     return 0;
 }

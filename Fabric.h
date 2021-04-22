@@ -11,33 +11,23 @@ public:
 
 class FabricHori : public Fabric {
 public:
-	virtual Vector* Create() override{ 
-		return new VectorHori; 
+	virtual Vector* Create() override{
+		return new VectorHori;
 	}
 };
 
 class FabricVert : public Fabric {
 public:
 	virtual Vector* Create() override{
-		return new VectorVert; 
+		return new VectorVert;
 	}
 };
 
 Vector* create(string str, map<string, Fabric*> factory) {
 	auto search = factory.find(str);
 	if (search == factory.end()) {
-		std::cout << "Not found\n";
+		std::cout << "Wrong type of vector\n";
 		throw - 1;
 	}
 		return factory[str]->Create();
 }
-/*
-Vector* create(string str, pair <string, Fabric*> factory) {
-	auto search = factory.find(str);
-	if (search == factory.end()) {
-		std::cout << "Not found\n";
-		throw - 1;
-	}
-		return factory[str]->Create();
-}
-*/

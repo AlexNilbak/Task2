@@ -27,7 +27,7 @@ int main() {
             n++;
         }
         input.seekg(0, ios_base::beg);
-        
+
         vector <Vector*> arr(n);
         map<string, Fabric*> factory;
         factory["Hori"] = new FabricHori;
@@ -35,7 +35,7 @@ int main() {
         for (auto i = arr.begin(); i !=arr.end(); ++i) {
             input >> st;
             *i = create(st, factory);
-            input >> sf;
+            input >> st;
             (*i)->SetFileName(st);
             input >> m;
             (*i)->Setn(m);
@@ -53,7 +53,7 @@ int main() {
         }
         return 0;
     }
-    catch (int err) { 
-        printf("error=%d\n", err); 
+    catch (int err) {
+        printf("error=%d\n", err);
     }
 }
